@@ -17,7 +17,10 @@ const { NotImplementedError } = require('../extensions/index.js');
 function countCats(arr) {
   // remove line with error and write your code here
   let counter = 0;
-  if (arr.includes('^^')) counter++;
+  for (let elem of arr) {
+    if (Array.isArray(elem)) counter += countCats(elem);
+    if (typeof elem === 'string' && elem.replace(/\s/g) === elem && elem.includes('^^')) counter++;
+  }
   return counter;
 }
 
