@@ -13,10 +13,14 @@ const { NotImplementedError } = require('../extensions/index.js');
 function encodeLine(str) {
   // remove line with error and write your code here
   let result = '';
+  let count = 1;
   for (let i = 0; i < str.length; i++) {
-    let count = 1;
-    if (str.slice(i + 1).includes(str[i])) count++;
-    else result += count + str[i];
+    if (str[i] === str[i + 1]) count++;
+    else {
+      if (count !== 1) result += count + str[i];
+      else result += str[i]
+      count = 1;
+    }
   }
   return result
 }
