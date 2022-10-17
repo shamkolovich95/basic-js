@@ -27,7 +27,7 @@ class VigenereCipheringMachine {
   encrypt(str, key) {
     // remove line with error and write your code here
     if (typeof str !== 'string' || typeof key !== 'string') {
-      throw new NotImplementedError('Error');
+      throw new Error('Incorrect arguments!');
     }
     let arr = str.toLowerCase().split('');
     let result = '';
@@ -49,7 +49,7 @@ class VigenereCipheringMachine {
   decrypt(str, key) {
     // remove line with error and write your code here
     if (typeof str !== 'string' || typeof key !== 'string') {
-      throw new NotImplementedError('Error');
+      throw new Error('Incorrect arguments!');
     }
     let arr = str.toLowerCase().split('');
     let result = '';

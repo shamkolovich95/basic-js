@@ -20,10 +20,10 @@ const chainMaker = {
   removeLink(index) {
     // remove line with error and write your code here
     if (this.arr[index - 1]) {
-      delete this.arr[index - 1];
+      this.arr.splice([index - 1], 1);
     } else {
       this.arr = [];
-      throw new NotImplementedError("You can't remove incorrect link!");
+      throw new Error('You can\'t remove incorrect link!');
     }
     return this;
   },
